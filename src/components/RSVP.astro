@@ -1,0 +1,39 @@
+---
+---
+
+<section class="px-6 lg:px-40 py-20 bg-primary/5" id="rsvp">
+  <div class="max-w-[720px] mx-auto text-center flex flex-col gap-8">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-4xl lg:text-5xl font-bold font-display">¿Nos acompañas?</h2>
+      <p class="text-slate-600 text-lg">Por favor, confirma tu asistencia antes del 1 de Mayo para que podamos preparar todo con cariño.</p>
+    </div>
+    
+    <div class="bg-white dark:bg-background-dark p-8 rounded-3xl shadow-xl shadow-primary/5 border border-primary/10">
+      <form class="flex flex-col gap-6 text-left">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-bold text-slate-700">Nombre Completo</label>
+            <input class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary" placeholder="Ej. Ana García" type="text" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-bold text-slate-700">Número de Invitados</label>
+            <select class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary">
+              <option>1 Persona</option>
+              <option>2 Personas</option>
+              <option>Grupo Familiar</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-bold text-slate-700">Mensaje especial o Alergias</label>
+          <textarea class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary" placeholder="Cuéntanos algo..." rows="3"></textarea>
+        </div>
+        
+        <button class="h-14 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all" type="submit">
+          Confirmar Asistencia
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+---
+const events = [
+  {
+    time: '12:00 PM',
+    icon: 'church',
+    title: 'Llegada de Invitados',
+    description: 'Recepción en el Santuario de Santa María'
+  },
+  {
+    time: '12:30 PM',
+    icon: 'favorite',
+    title: 'Ceremonia Religiosa',
+    description: 'Celebración de nuestra unión'
+  },
+  {
+    time: '2:00 PM',
+    icon: 'photo_camera',
+    title: 'Sesión de Fotos',
+    description: 'Fotos con familiares y amigos en los jardines'
+  },
+  {
+    time: '3:00 PM',
+    icon: 'restaurant',
+    title: 'Recepción y Banquete',
+    description: 'Comida y brindis en el Salón de Eventos'
+  },
+  {
+    time: '5:00 PM',
+    icon: 'cake',
+    title: 'Corte de Pastel',
+    description: 'Momento dulce para compartir'
+  },
+  {
+    time: '6:00 PM',
+    icon: 'music_note',
+    title: 'Baile y Fiesta',
+    description: 'Celebración hasta la noche'
+  }
+];
+---
+
+<section class="px-6 lg:px-40 py-20 bg-white dark:bg-slate-900/50">
+  <div class="max-w-[960px] mx-auto">
+    <div class="flex flex-col items-center mb-16 text-center">
+      <span class="material-symbols-outlined text-4xl text-primary/40 mb-4">schedule</span>
+      <h2 class="text-4xl font-bold font-display mb-4">Itinerario del Día</h2>
+      <p class="text-slate-600 max-w-lg">Un día lleno de momentos especiales que queremos compartir contigo.</p>
+    </div>
+    
+    <div class="relative">
+      <!-- Línea vertical central -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden lg:block"></div>
+      
+      <div class="space-y-12">
+        {events.map((event, index) => (
+          <div class={`relative flex items-center gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+            <!-- Contenido -->
+            <div class={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'} text-left`}>
+              <div class="bg-background-light dark:bg-background-dark p-6 rounded-2xl border border-primary/10 hover:shadow-lg hover:shadow-primary/10 transition-all">
+                <div class="flex items-center gap-3 mb-3 lg:justify-end" class:list={[index % 2 === 0 ? 'lg:flex-row-reverse' : '', 'justify-start']}>
+                  <span class="text-primary font-bold text-lg">{event.time}</span>
+                  <div class="h-px flex-grow bg-primary/20 max-w-[60px]"></div>
+                </div>
+                <h3 class="text-xl font-bold font-display mb-2">{event.title}</h3>
+                <p class="text-slate-600 text-sm">{event.description}</p>
+              </div>
+            </div>
+            
+            <!-- Icono central -->
+            <div class="relative z-10 flex-shrink-0">
+              <div class="w-16 h-16 rounded-full bg-primary/10 border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg">
+                <span class="material-symbols-outlined text-primary text-2xl">{event.icon}</span>
+              </div>
+            </div>
+            
+            <!-- Espacio vacío para el otro lado -->
+            <div class="flex-1 hidden lg:block"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

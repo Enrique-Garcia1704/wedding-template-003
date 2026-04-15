@@ -1,0 +1,421 @@
+---
+---
+
+<section class="details-section" id="detalles">
+
+  <!-- ══════════ Top Info Bar ══════════ -->
+  <div class="details-bar">
+    <div class="details-bar-inner">
+      <div class="details-bar-item">
+        <span class="details-bar-label">Fecha</span>
+        <span class="details-bar-value">24 de Mayo / 2025</span>
+      </div>
+      <div class="details-bar-sep" aria-hidden="true"></div>
+      <div class="details-bar-item">
+        <span class="details-bar-label">Hora</span>
+        <span class="details-bar-value">12:30 de la tarde</span>
+      </div>
+      <div class="details-bar-sep" aria-hidden="true"></div>
+      <div class="details-bar-item">
+        <span class="details-bar-label">Lugar</span>
+        <span class="details-bar-value">Santuario de Santa María</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ Main Content ══════════ -->
+  <div class="details-body">
+
+    <!-- ── Left: detail items ── -->
+    <div class="details-list">
+
+      <!-- Section heading -->
+      <div class="details-list-header">
+        <span class="details-eyebrow">Información para invitados</span>
+        <h2 class="details-title font-display">Detalles del Día</h2>
+        <p class="details-subtitle">Todo lo que necesitas saber para acompañarnos en este momento tan especial.</p>
+      </div>
+
+      <!-- Item 1: Dress Code -->
+      <div class="details-item">
+        <div class="details-icon-circle details-icon-circle--pink">
+          <span class="material-symbols-outlined">apparel</span>
+        </div>
+        <div class="details-item-content">
+          <h3 class="details-item-title font-display">Código de Vestimenta</h3>
+          <p class="details-item-desc">
+            <strong>Formal de día.</strong> Los colores pasteles y telas ligeras son bienvenidos para celebrar la primavera. Por favor evitar el color blanco.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2: Gifts -->
+      <div class="details-item">
+        <div class="details-icon-circle details-icon-circle--green">
+          <span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
+        </div>
+        <div class="details-item-content">
+          <h3 class="details-item-title font-display">Sugerencia de Regalos</h3>
+          <p class="details-item-desc">
+            <strong>Lluvia de sobres.</strong> Tu presencia es nuestro mejor regalo. Si deseas tener un detalle especial, contaremos con una caja para lluvia de sobres.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3: Ceremony -->
+      <div class="details-item">
+        <div class="details-icon-circle details-icon-circle--rose">
+          <span class="material-symbols-outlined">church</span>
+        </div>
+        <div class="details-item-content">
+          <h3 class="details-item-title font-display">La Ceremonia</h3>
+          <p class="details-item-desc">
+            La ceremonia religiosa comenzará puntualmente a las <strong>12:30 hrs</strong> en el Santuario de Santa María, Camino del Rosario s/n, Valle de las Flores.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Right: Map ── -->
+    <div class="details-map-wrap">
+      <div class="details-map-header">
+        <span class="material-symbols-outlined details-map-icon">location_on</span>
+        <div>
+          <p class="details-map-name">Santuario de Santa María</p>
+          <p class="details-map-address">Camino del Rosario s/n, Valle de las Flores</p>
+        </div>
+      </div>
+      <div class="details-map-frame">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-99.14,-19.42,-99.12,-19.40&layer=mapnik&marker=-19.41,-99.13"
+          width="100%"
+          height="100%"
+          style="border:0; border-radius: 0 0 1.5rem 1.5rem;"
+          loading="lazy"
+          title="Ubicación del evento"
+          aria-label="Mapa con la ubicación del Santuario de Santa María"
+        ></iframe>
+      </div>
+      <a
+        href="https://www.google.com/maps/search/Santuario+de+Santa+Mar%C3%ADa+Valle+de+las+Flores"
+        target="_blank"
+        rel="noopener"
+        class="details-map-btn"
+      >
+        <span class="material-symbols-outlined text-base">open_in_new</span>
+        Abrir en Google Maps
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ═══════════════════════════════════
+     DETAILS — layout & tokens
+  ═══════════════════════════════════ */
+  .details-section {
+    font-family: "Noto Sans", sans-serif;
+    background: #f8f6f6;
+  }
+
+  :global(.dark) .details-section {
+    background: #221015;
+  }
+
+  /* ── Top bar ── */
+  .details-bar {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 2rem;
+    background: #fff;
+  }
+
+  :global(.dark) .details-bar {
+    background: #2c1419;
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .details-bar-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .details-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.5rem 2.5rem;
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+  }
+
+  .details-bar-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #ee2b5b;
+    opacity: 0.75;
+  }
+
+  .details-bar-value {
+    font-family: "Noto Serif", serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e1b1b;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  :global(.dark) .details-bar-value {
+    color: #f0e8ea;
+  }
+
+  .details-bar-sep {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+  }
+
+  :global(.dark) .details-bar-sep {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ── Main body: two-column ── */
+  .details-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .details-body {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .details-bar-sep { display: none; }
+    .details-bar-item { padding: 0.5rem 1rem; }
+  }
+
+  /* ── Left column: list ── */
+  .details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .details-list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    margin-bottom: 0.5rem;
+  }
+
+  :global(.dark) .details-list-header {
+    border-color: rgba(255,255,255,0.07);
+  }
+
+  .details-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #ee2b5b;
+    opacity: 0.75;
+  }
+
+  .details-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    color: #1e1b1b;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  :global(.dark) .details-title {
+    color: #f0e8ea;
+  }
+
+  .details-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #6b7280;
+    font-weight: 300;
+    max-width: 36ch;
+  }
+
+  /* ── Detail items ── */
+  .details-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  /* Colored circle icon */
+  .details-icon-circle {
+    flex-shrink: 0;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .details-item:hover .details-icon-circle {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  }
+
+  .details-icon-circle .material-symbols-outlined {
+    font-size: 1.4rem;
+  }
+
+  /* Color variants matching the project palette */
+  .details-icon-circle--pink {
+    background: linear-gradient(135deg, #ee2b5b, #f472b6);
+    box-shadow: 0 4px 12px rgba(238, 43, 91, 0.3);
+  }
+  .details-icon-circle--green {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+  .details-icon-circle--rose {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  }
+
+  .details-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.3rem;
+  }
+
+  .details-item-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e1b1b;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  :global(.dark) .details-item-title {
+    color: #f0e8ea;
+  }
+
+  .details-item-desc {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #6b7280;
+    font-weight: 300;
+  }
+
+  .details-item-desc strong {
+    color: #374151;
+    font-weight: 600;
+  }
+
+  :global(.dark) .details-item-desc strong {
+    color: #d1c4c8;
+  }
+
+  /* ── Right column: map ── */
+  .details-map-wrap {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    background: #fff;
+    position: sticky;
+    top: 2rem;
+  }
+
+  :global(.dark) .details-map-wrap {
+    background: #2c1419;
+    border-color: rgba(255,255,255,0.07);
+  }
+
+  .details-map-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+
+  :global(.dark) .details-map-header {
+    border-color: rgba(255,255,255,0.07);
+  }
+
+  .details-map-icon {
+    font-size: 1.5rem;
+    color: #ee2b5b;
+    flex-shrink: 0;
+  }
+
+  .details-map-name {
+    font-family: "Noto Serif", serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e1b1b;
+  }
+
+  :global(.dark) .details-map-name {
+    color: #f0e8ea;
+  }
+
+  .details-map-address {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-top: 0.1rem;
+  }
+
+  .details-map-frame {
+    height: 340px;
+    overflow: hidden;
+  }
+
+  .details-map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ee2b5b;
+    background: rgba(238, 43, 91, 0.05);
+    border-top: 1px solid rgba(238, 43, 91, 0.1);
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .details-map-btn:hover {
+    background: #ee2b5b;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Hero from '../components/Hero.astro';
+import FallingPetals from '../components/FallingPetals.astro';
+import Details from '../components/Details.astro';
+import Gallery from '../components/Gallery.astro';
+import Header from '../components/Header.astro';
+import Timeline from '../components/Timeline.astro';
+import RSVP from '../components/RSVP.astro';
+import Footer from '../components/Footer.astro';
+import Ceremony from '../components/Ceremony.astro';
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+
+	<FallingPetals />
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <Header />
+    <main class="flex-grow">
+      <Hero />
+      <Gallery />
+      <Timeline />
+      <Ceremony />
+      <Details />
+      <RSVP />
+    </main>
+    <Footer />
+  </div>
+
+</Layout>

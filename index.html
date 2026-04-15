@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lucía &amp; Carlos - Nuestra Boda de Primavera</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "pastel-pink": "#fce4ec",
+                        "pastel-mint": "#e8f5e9",
+                        "pastel-lavender": "#f3e5f5",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Noto Serif', serif; }
+        .spring-gradient {
+            background: linear-gradient(135deg, #fce4ec 0%, #e8f5e9 50%, #f3e5f5 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-6 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">local_florist</span>
+<h2 class="text-xl font-bold tracking-tight font-display">Lucía &amp; Carlos</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#inicio">Inicio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#ceremomia">Ceremonia</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#detalles">Detalles</a>
+<a class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary text-white text-sm font-bold hover:shadow-lg hover:shadow-primary/20 transition-all" href="#rsvp">RSVP</a>
+</nav>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative @container px-4 py-8 lg:px-40 lg:py-12" id="inicio">
+<div class="relative overflow-hidden rounded-xl lg:rounded-3xl min-h-[600px] flex flex-col items-center justify-center text-center p-6 spring-gradient border border-white/50 shadow-sm">
+<!-- Floral Accents (Represented by divs) -->
+<div class="absolute top-0 left-0 p-8 text-primary/20 select-none">
+<span class="material-symbols-outlined text-9xl">filter_vintage</span>
+</div>
+<div class="absolute bottom-0 right-0 p-8 text-primary/20 select-none">
+<span class="material-symbols-outlined text-9xl">filter_vintage</span>
+</div>
+<div class="z-10 flex flex-col gap-6 max-w-2xl">
+<span class="text-primary font-medium tracking-[0.2em] uppercase text-sm">¡Nos Casamos!</span>
+<h1 class="text-5xl lg:text-8xl font-bold text-slate-900 leading-tight">
+                            Lucía <span class="text-primary">&amp;</span> Carlos
+                        </h1>
+<div class="h-px w-24 bg-primary/30 mx-auto my-2"></div>
+<div class="flex flex-col gap-2">
+<p class="text-xl lg:text-2xl font-display italic text-slate-700">24 de Mayo, 2025</p>
+<p class="text-base text-slate-600">Santuario de Santa María • 12:30 PM</p>
+</div>
+<div class="mt-8">
+<a class="inline-flex h-14 items-center justify-center px-10 rounded-full bg-primary text-white text-lg font-bold shadow-xl shadow-primary/30 hover:scale-105 transition-transform" href="#rsvp">
+                                Confirmar Asistencia
+                            </a>
+</div>
+</div>
+<!-- Visual placeholders for spring theme -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="Soft cherry blossom and tulip patterns on a pastel background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjDsMV709zsIBdCWWbzZaQrq6uiWNe30GkYvAoQerIdkaQ66PrK4vUG71Z0fv6t-9g7wAe0p_5ySnBSEpfR5E0lEsaXzbt5jvPq9Wcs6u9UaCQyoLceu9ACNzUrrG5ajRsSXWPeEI6oF7lrYoKANnAekgQrAXFUeCNHFKjIDR1Q3OWT9lefpZby5P6D4HvS1OeevwZs1_sSEe9uKrp3ML3ZVhtGxGp5ADf9B8sk_tRwJa0nCa8plHGLDl7Y8zgzUeaiyXkBrgEho8');"></div>
+</div>
+</section>
+<!-- Ceremony Section -->
+<section class="px-6 lg:px-40 py-20 bg-white dark:bg-slate-900/50" id="ceremomia">
+<div class="max-w-[960px] mx-auto">
+<div class="flex flex-col items-center mb-16 text-center">
+<span class="material-symbols-outlined text-4xl text-primary/40 mb-4">church</span>
+<h2 class="text-4xl font-bold font-display mb-4">La Ceremonia</h2>
+<p class="text-slate-600 max-w-lg">Un momento para compartir nuestro amor en un entorno primaveral rodeado de naturaleza.</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-center bg-background-light dark:bg-background-dark rounded-3xl overflow-hidden border border-primary/5">
+<div class="h-full min-h-[400px] bg-cover bg-center" data-alt="Charming stone chapel surrounded by spring flowers and trees" data-location="Santa María" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiPL-O3NhGOSWasG6fCeCj6qSXZEwjcfmP_VLmZZ78ONWDgP6F-lJ-MLXNWaFtV8EpY1p4GciBSdIr92QZkkFu2jaF1xhfIPj3f3txvXwpXH716oDPD5LuiCpRWOePcVIVP2RnrTW-iR40pIf0jQ6p_I24yIWxACKs3DhF3NJEJI0v8nSS8eSLR5vyUu2qhQCIwoZHyjnkZdwusp7wRIXnJtWQhnRo6C_t8xfyT-z06wsZSHgFSay-BUBO4LH2UiLw2fZSA2Ymfak');"></div>
+<div class="p-8 lg:p-12 flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<h3 class="text-2xl font-bold font-display text-primary">Nuestra Unión</h3>
+<p class="text-lg font-medium">Santuario de Santa María</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<p class="text-slate-600">Sábado 24 de Mayo de 2025, a las 12:30 horas.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<p class="text-slate-600">Camino del Rosario s/n, Valle de las Flores.</p>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full lg:w-auto px-8 py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">map</span>
+                                    Ver en Google Maps
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Details Section -->
+<section class="px-6 lg:px-40 py-20" id="detalles">
+<div class="max-w-[960px] mx-auto">
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Dress Code Card -->
+<div class="p-10 rounded-3xl bg-pastel-mint/30 dark:bg-primary/5 border border-primary/10 flex flex-col items-center text-center gap-4">
+<span class="material-symbols-outlined text-5xl text-primary/60">apparel</span>
+<h3 class="text-xl font-bold font-display">Código de Vestimenta</h3>
+<p class="text-slate-700 font-medium italic">Formal de día</p>
+<p class="text-sm text-slate-500">Los colores pasteles y telas ligeras son bienvenidos para celebrar la primavera.</p>
+</div>
+<!-- Gifts Card -->
+<div class="p-10 rounded-3xl bg-pastel-lavender/30 dark:bg-primary/5 border border-primary/10 flex flex-col items-center text-center gap-4">
+<span class="material-symbols-outlined text-5xl text-primary/60">featured_seasonal_and_gifts</span>
+<h3 class="text-xl font-bold font-display">Sugerencia de Regalos</h3>
+<p class="text-slate-700 font-medium italic">Lluvia de Sobres</p>
+<p class="text-sm text-slate-500">Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle, contaremos con lluvia de sobres.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Section -->
+<section class="px-6 lg:px-40 py-20 bg-primary/5" id="rsvp">
+<div class="max-w-[720px] mx-auto text-center flex flex-col gap-8">
+<div class="flex flex-col gap-3">
+<h2 class="text-4xl lg:text-5xl font-bold font-display">¿Nos acompañas?</h2>
+<p class="text-slate-600 text-lg">Por favor, confirma tu asistencia antes del 1 de Mayo para que podamos preparar todo con cariño.</p>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 rounded-3xl shadow-xl shadow-primary/5 border border-primary/10">
+<form class="flex flex-col gap-6 text-left">
+<div class="grid md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700">Nombre Completo</label>
+<input class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary" placeholder="Ej. Ana García" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700">Número de Invitados</label>
+<select class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary">
+<option>1 Persona</option>
+<option>2 Personas</option>
+<option>Grupo Familiar</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700">Mensaje especial o Alergias</label>
+<textarea class="rounded-xl border-slate-200 focus:ring-primary focus:border-primary" placeholder="Cuéntanos algo..." rows="3"></textarea>
+</div>
+<button class="h-14 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all" type="submit">
+                                Confirmar Asistencia
+                            </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="px-6 lg:px-40 py-12 border-t border-primary/10 text-center">
+<div class="flex flex-col items-center gap-6">
+<div class="flex items-center gap-2 text-primary/40">
+<span class="material-symbols-outlined">filter_vintage</span>
+<span class="material-symbols-outlined">filter_vintage</span>
+<span class="material-symbols-outlined">filter_vintage</span>
+</div>
+<p class="text-slate-400 text-sm">Hecho con amor para nuestra boda • 2025</p>
+<div class="text-primary font-display font-bold italic text-lg">
+                    L <span class="mx-2">&amp;</span> C
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
