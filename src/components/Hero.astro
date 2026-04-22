@@ -10,22 +10,22 @@ interface HeroData {
 const { nombreNovia, nombreNovio, fecha, lugar } = Astro.props as HeroData;
 
 // Convertir fecha UTC a hora de México
-const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+const fechaMX = fecha ? new Date(fecha).toLocaleString("es-MX", {
   timeZone: "America/Mexico_City",
   year: "numeric",
   month: "short",
   day: "numeric",
   hour: "2-digit",
   minute: "2-digit"
-});
+}) : "";
 
 // Formatear fecha para mostrar solo hora
-const horaMX = new Date(fecha).toLocaleTimeString("es-MX", {
+const horaMX = fecha ? new Date(fecha).toLocaleTimeString("es-MX", {
   timeZone: "America/Mexico_City",
   hour: "2-digit",
   minute: "2-digit",
   hour12: true
-});
+}) : "";
 ---
 
 <section class="relative @container px-4 py-8 lg:px-40 lg:py-12" id="inicio">

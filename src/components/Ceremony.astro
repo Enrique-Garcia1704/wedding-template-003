@@ -25,17 +25,17 @@ const {
   imagen_fondo
 } = Astro.props as HeroData;
 
-const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+const fechaMX = fecha ? new Date(fecha).toLocaleString("es-MX", {
   timeZone: "America/Mexico_City",
   year: "numeric",
   month: "short",
   day: "numeric",
   hour: "2-digit",
   minute: "2-digit"
-});
+}) : "";
 
 // Texto que se usará para búsqueda si no hay coordenadas
-const ubicacionMapa = direccionMapa || lugar;
+const ubicacionMapa = direccionMapa || lugar || "";
 
 // URLs dinámicas
 const mapaUrl =

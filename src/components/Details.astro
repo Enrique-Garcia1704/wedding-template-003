@@ -14,25 +14,25 @@ interface HeroData {
 const { nombreNovia, nombreNovio, fecha, lugar, frase_principal, frase_secundaria , imagen_fondo } = Astro.props as HeroData;
 
 // Convertir fecha UTC a hora de México
-const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+const fechaMX = fecha ? new Date(fecha).toLocaleString("es-MX", {
   timeZone: "America/Mexico_City",
   year: "numeric",
   month: "short",
   day: "numeric",
   hour: "2-digit",
   minute: "2-digit"
-});
+}) : "";
 
 // Formatear fecha para mostrar solo hora
-const horaMX = new Date(fecha).toLocaleTimeString("es-MX", {
+const horaMX = fecha ? new Date(fecha).toLocaleTimeString("es-MX", {
   timeZone: "America/Mexico_City",
   hour: "2-digit",
   minute: "2-digit",
   hour12: true
-});
+}) : "";
 
 
-const lugarEncoded = encodeURIComponent(lugar);
+const lugarEncoded = encodeURIComponent(lugar || "");
 const mapaUrl = `https://www.google.com/maps?q=${lugarEncoded}&output=embed`;
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lugarEncoded}`;
 ---

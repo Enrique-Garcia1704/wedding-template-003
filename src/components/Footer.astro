@@ -9,13 +9,15 @@ interface HeroData {
 const { nombreNovia, nombreNovio } = Astro.props as HeroData;
 
 // Función para obtener iniciales (soporta nombres compuestos)
-const getIniciales = (nombre: string) =>
-  nombre
+const getIniciales = (nombre: string | undefined) => {
+  if (!nombre) return "";
+  return nombre
     .trim()
     .split(/\s+/)
     .map(n => n[0])
     .join("")
     .toUpperCase();
+};
 
 const inicialNovia = getIniciales(nombreNovia);
 const inicialNovio = getIniciales(nombreNovio);
