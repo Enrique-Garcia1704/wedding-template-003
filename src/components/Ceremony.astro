@@ -1,4 +1,52 @@
 ---
+interface HeroData {
+  nombreNovia: string;
+  nombreNovio: string;
+  fecha: string;
+  lugar: string;
+  direccionMapa?: string;
+  latitud?: number;
+  longitud?: number;
+  frase_principal: string;
+  frase_secundaria: string;
+  imagen_fondo: { url: string } | null;
+}
+
+const {
+  nombreNovia,
+  nombreNovio,
+  fecha,
+  lugar,
+  direccionMapa,
+  latitud,
+  longitud,
+  frase_principal,
+  frase_secundaria,
+  imagen_fondo
+} = Astro.props as HeroData;
+
+const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+  timeZone: "America/Mexico_City",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
+// Texto que se usará para búsqueda si no hay coordenadas
+const ubicacionMapa = direccionMapa || lugar;
+
+// URLs dinámicas
+const mapaUrl =
+  latitud != null && longitud != null
+    ? `https://www.google.com/maps?q=${latitud},${longitud}&output=embed`
+    : `https://www.google.com/maps?q=${encodeURIComponent(ubicacionMapa)}&output=embed`;
+
+const googleMapsUrl =
+  latitud != null && longitud != null
+    ? `https://www.google.com/maps/search/?api=1&query=${latitud},${longitud}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ubicacionMapa)}`;
 ---
 
 <section class="px-6 lg:px-40 py-20 bg-white dark:bg-slate-900/50" id="ceremomia">
@@ -6,34 +54,52 @@
     <div class="flex flex-col items-center mb-16 text-center">
       <span class="material-symbols-outlined text-4xl text-primary/40 mb-4">church</span>
       <h2 class="text-4xl font-bold font-display mb-4">La Ceremonia</h2>
-      <p class="text-slate-600 max-w-lg">Un momento para compartir nuestro amor en un entorno primaveral rodeado de naturaleza.</p>
+      <p class="text-slate-600 max-w-lg">
+        Un momento para compartir nuestro amor en un entorno primaveral rodeado de naturaleza.
+      </p>
     </div>
     
     <div class="grid lg:grid-cols-2 gap-12 items-center bg-background-light dark:bg-background-dark rounded-3xl overflow-hidden border border-primary/5">
-      <div class="h-full min-h-[400px] bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiPL-O3NhGOSWasG6fCeCj6qSXZEwjcfmP_VLmZZ78ONWDgP6F-lJ-MLXNWaFtV8EpY1p4GciBSdIr92QZkkFu2jaF1xhfIPj3f3txvXwpXH716oDPD5LuiCpRWOePcVIVP2RnrTW-iR40pIf0jQ6p_I24yIWxACKs3DhF3NJEJI0v8nSS8eSLR5vyUu2qhQCIwoZHyjnkZdwusp7wRIXnJtWQhnRo6C_t8xfyT-z06wsZSHgFSay-BUBO4LH2UiLw2fZSA2Ymfak');"></div>
+      <div class="h-full min-h-[400px]">
+        <iframe
+          src={mapaUrl}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          title="Ubicación del evento"
+          aria-label={`Mapa con la ubicación de ${ubicacionMapa}`}
+        ></iframe>
+      </div>
       
       <div class="p-8 lg:p-12 flex flex-col gap-6">
         <div class="flex flex-col gap-1">
           <h3 class="text-2xl font-bold font-display text-primary">Nuestra Unión</h3>
-          <p class="text-lg font-medium">Santuario de Santa María</p>
+          <p class="text-lg font-medium">{lugar}</p>
         </div>
         
         <div class="space-y-4">
           <div class="flex items-start gap-3">
             <span class="material-symbols-outlined text-primary">schedule</span>
-            <p class="text-slate-600">Sábado 24 de Mayo de 2025, a las 12:30 horas.</p>
+            <p class="text-slate-600">{fechaMX}</p>
           </div>
+
           <div class="flex items-start gap-3">
             <span class="material-symbols-outlined text-primary">location_on</span>
-            <p class="text-slate-600">Camino del Rosario s/n, Valle de las Flores.</p>
+            <p class="text-slate-600">{ubicacionMapa}</p>
           </div>
         </div>
         
         <div class="pt-4">
-          <button class="w-full lg:w-auto px-8 py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener"
+            class="w-full lg:w-auto px-8 py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
+          >
             <span class="material-symbols-outlined text-sm">map</span>
             Ver en Google Maps
-          </button>
+          </a>
         </div>
       </div>
     </div>

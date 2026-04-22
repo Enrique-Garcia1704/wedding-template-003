@@ -12,6 +12,20 @@ import Footer from '../components/Footer.astro';
 import Ceremony from '../components/Ceremony.astro';
 
 
+
+
+
+import { fetchIndexData } from '../lib/services/index.ts';
+
+export const prerender = false;
+
+const id = Astro.url.searchParams.get("id");
+const indexData = id ? await fetchIndexData(id) : null;
+
+
+indexData?.detalle_evento?.[0]?.nombre_pareja1
+indexData?.fecha_evento
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -20,16 +34,16 @@ import Ceremony from '../components/Ceremony.astro';
 
 	<FallingPetals />
   <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-    <Header />
+    <Header nombreNovia={indexData?.detalle_evento?.[0]?.nombre_pareja1} nombreNovio={indexData?.detalle_evento?.[0]?.nombre_pareja2} />
     <main class="flex-grow">
-      <Hero />
+      <Hero nombreNovia={indexData?.detalle_evento?.[0]?.nombre_pareja1} nombreNovio={indexData?.detalle_evento?.[0]?.nombre_pareja2}  fecha={indexData?.fecha_evento} lugar={indexData?.detalle_evento?.[0]?.lugar} />
       <Gallery />
       <Timeline />
-      <Ceremony />
-      <Details />
+      <Ceremony fecha={indexData?.fecha_evento} lugar={indexData?.detalle_evento?.[0]?.lugar}  />
+      <Details fecha={indexData?.fecha_evento} lugar={indexData?.detalle_evento?.[0]?.lugar} />
       <RSVP />
     </main>
-    <Footer />
+    <Footer nombreNovia={indexData?.detalle_evento?.[0]?.nombre_pareja1} nombreNovio={indexData?.detalle_evento?.[0]?.nombre_pareja2} />
   </div>
 
 </Layout>

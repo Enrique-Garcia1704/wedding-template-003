@@ -1,4 +1,31 @@
 ---
+
+interface HeroData {
+  nombreNovia: string;
+  nombreNovio: string;
+  fecha: string;
+  lugar: string;
+}
+
+const { nombreNovia, nombreNovio, fecha, lugar } = Astro.props as HeroData;
+
+// Convertir fecha UTC a hora de México
+const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+  timeZone: "America/Mexico_City",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
+// Formatear fecha para mostrar solo hora
+const horaMX = new Date(fecha).toLocaleTimeString("es-MX", {
+  timeZone: "America/Mexico_City",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true
+});
 ---
 
 <section class="relative @container px-4 py-8 lg:px-40 lg:py-12" id="inicio">
@@ -14,12 +41,12 @@
     <div class="z-10 flex flex-col gap-6 max-w-2xl">
       <span class="text-primary font-medium tracking-[0.2em] uppercase text-sm">¡Nos Casamos!</span>
       <h1 class="text-5xl lg:text-8xl font-bold text-slate-900 leading-tight">
-        Lucía <span class="text-primary">&</span> Carlos
+        {nombreNovia} <span class="text-primary">&</span> {nombreNovio}
       </h1>
       <div class="h-px w-24 bg-primary/30 mx-auto my-2"></div>
       <div class="flex flex-col gap-2">
-        <p class="text-xl lg:text-2xl font-display italic text-slate-700">24 de Mayo, 2025</p>
-        <p class="text-base text-slate-600">Santuario de Santa María • 12:30 PM</p>
+        <p class="text-xl lg:text-2xl font-display italic text-slate-700">{fechaMX}</p>
+        <p class="text-base text-slate-600">{lugar} • {horaMX}</p>
       </div>
       <div class="mt-8">
         <a class="inline-flex h-14 items-center justify-center px-10 rounded-full bg-primary text-white text-lg font-bold shadow-xl shadow-primary/30 hover:scale-105 transition-transform" href="#rsvp">

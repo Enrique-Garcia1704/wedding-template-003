@@ -1,4 +1,40 @@
 ---
+
+interface HeroData {
+  nombreNovia: string;
+  nombreNovio: string;
+  fecha: string;
+  lugar: string;
+  frase_principal: string;
+  frase_secundaria: string;
+  imagen_fondo: {url: string} | null;
+
+}
+
+const { nombreNovia, nombreNovio, fecha, lugar, frase_principal, frase_secundaria , imagen_fondo } = Astro.props as HeroData;
+
+// Convertir fecha UTC a hora de México
+const fechaMX = new Date(fecha).toLocaleString("es-MX", {
+  timeZone: "America/Mexico_City",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
+// Formatear fecha para mostrar solo hora
+const horaMX = new Date(fecha).toLocaleTimeString("es-MX", {
+  timeZone: "America/Mexico_City",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true
+});
+
+
+const lugarEncoded = encodeURIComponent(lugar);
+const mapaUrl = `https://www.google.com/maps?q=${lugarEncoded}&output=embed`;
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lugarEncoded}`;
 ---
 
 <section class="details-section" id="detalles">
@@ -8,17 +44,17 @@
     <div class="details-bar-inner">
       <div class="details-bar-item">
         <span class="details-bar-label">Fecha</span>
-        <span class="details-bar-value">24 de Mayo / 2025</span>
+        <span class="details-bar-value">{fechaMX}</span>
       </div>
       <div class="details-bar-sep" aria-hidden="true"></div>
       <div class="details-bar-item">
         <span class="details-bar-label">Hora</span>
-        <span class="details-bar-value">12:30 de la tarde</span>
+        <span class="details-bar-value">{horaMX}</span>
       </div>
       <div class="details-bar-sep" aria-hidden="true"></div>
       <div class="details-bar-item">
         <span class="details-bar-label">Lugar</span>
-        <span class="details-bar-value">Santuario de Santa María</span>
+        <span class="details-bar-value">{lugar}</span>
       </div>
     </div>
   </div>
@@ -70,7 +106,7 @@
         <div class="details-item-content">
           <h3 class="details-item-title font-display">La Ceremonia</h3>
           <p class="details-item-desc">
-            La ceremonia religiosa comenzará puntualmente a las <strong>12:30 hrs</strong> en el Santuario de Santa María, Camino del Rosario s/n, Valle de las Flores.
+            La ceremonia religiosa comenzará puntualmente a las <strong>{horaMX}</strong> en el Santuario de Santa María, Camino del Rosario s/n, Valle de las Flores.
           </p>
         </div>
       </div>
@@ -79,34 +115,36 @@
 
     <!-- ── Right: Map ── -->
     <div class="details-map-wrap">
-      <div class="details-map-header">
-        <span class="material-symbols-outlined details-map-icon">location_on</span>
-        <div>
-          <p class="details-map-name">Santuario de Santa María</p>
-          <p class="details-map-address">Camino del Rosario s/n, Valle de las Flores</p>
-        </div>
-      </div>
-      <div class="details-map-frame">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-99.14,-19.42,-99.12,-19.40&layer=mapnik&marker=-19.41,-99.13"
-          width="100%"
-          height="100%"
-          style="border:0; border-radius: 0 0 1.5rem 1.5rem;"
-          loading="lazy"
-          title="Ubicación del evento"
-          aria-label="Mapa con la ubicación del Santuario de Santa María"
-        ></iframe>
-      </div>
-      <a
-        href="https://www.google.com/maps/search/Santuario+de+Santa+Mar%C3%ADa+Valle+de+las+Flores"
-        target="_blank"
-        rel="noopener"
-        class="details-map-btn"
-      >
-        <span class="material-symbols-outlined text-base">open_in_new</span>
-        Abrir en Google Maps
-      </a>
+  <div class="details-map-header">
+    <span class="material-symbols-outlined details-map-icon">location_on</span>
+    <div>
+      <p class="details-map-address">{lugar}</p>
     </div>
+  </div>
+
+  <div class="details-map-frame">
+    <iframe
+      src={mapaUrl}
+      width="100%"
+      height="100%"
+      style="border:0; border-radius: 0 0 1.5rem 1.5rem;"
+      loading="lazy"
+      title="Ubicación del evento"
+      aria-label={`Mapa con la ubicación de ${lugar}`}
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <a
+    href={googleMapsUrl}
+    target="_blank"
+    rel="noopener"
+    class="details-map-btn"
+  >
+    <span class="material-symbols-outlined text-base">open_in_new</span>
+    Abrir en Google Maps
+  </a>
+</div>
 
   </div>
 </section>
